@@ -99,7 +99,7 @@ export default function MobileBottomNav() {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 inset-x-0 z-40
+      className="md:landscape:hidden xl:hidden fixed bottom-0 inset-x-0 z-40
                  bg-white/60 dark:bg-[#1c1c1e]/60
                  backdrop-blur-2xl backdrop-saturate-150
                  border-t border-black/[0.04] dark:border-white/[0.08]

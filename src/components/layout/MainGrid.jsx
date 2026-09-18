@@ -32,7 +32,7 @@ export default function MainGrid({ children }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 items-start gap-4 md:grid-cols-[minmax(0,1fr)_220px] lg:grid-cols-[minmax(0,1fr)_260px] xl:grid-cols-[minmax(0,1fr)_295px] xl:gap-6">
+      <div className="grid grid-cols-1 items-start gap-4 xl:grid-cols-[minmax(0,1fr)_295px] xl:gap-6">
         <main className="min-w-0 w-full py-5 sm:py-6">
           {showNews ? (
             <NewsDetailPanel />
@@ -47,7 +47,7 @@ export default function MainGrid({ children }) {
           )}
         </main>
 
-        <aside className="hidden w-full min-w-0 py-6 pl-0 pr-0 md:block lg:pl-1 lg:pr-1 md:sticky md:bottom-6 md:self-end">
+        <aside className="hidden w-full min-w-0 py-6 pl-0 pr-0 xl:block lg:pl-1 lg:pr-1 xl:sticky xl:bottom-6 xl:self-end">
           <div className="flex flex-col gap-4">
             <WidgetRail />
           </div>
