@@ -21,17 +21,13 @@ export default function EPaper({ title = "ઈ-પેપર", to = "/epaper" }) {
         </span>
       </div>
 
-      {/* ઇમેજ કન્ટેનર */}
-      <div className="w-full max-w-sm rounded-[7px]">
-        <div className="relative w-full overflow-hidden leading-none h-[150px] rounded-b-3xl scale-102">
+      {/* ઇમેજ કન્ટેનર — video jaisa same 16/10 aspect, har width pe responsive */}
+      <div className="w-full overflow-hidden rounded-xl">
+        <div className="relative aspect-[16/10] w-full overflow-hidden">
           <img
             src={epaperImage}
             alt="ઈ-પેપર"
-            className="block w-full h-auto object-cover object-top rounded-3xl"
-            style={{
-              clipPath: "inset(0 0 50% 0)",
-              marginBottom: "-65%",
-            }}
+            className="absolute inset-0 block h-full w-full object-cover object-top"
           />
         </div>
       </div>

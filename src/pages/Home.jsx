@@ -35,7 +35,7 @@ import OpinionWidgetCard from "../components/widgets/OpinionWidgetCard.jsx";
 function TabletLandscapeRow({ children }) {
   return (
     <div className="hidden py-5 md:landscape:block xl:hidden">
-      <div className="grid w-full grid-cols-2 items-start gap-4">
+      <div className="grid w-full grid-cols-2 items-stretch gap-4">
         {children}
       </div>
     </div>
