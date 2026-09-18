@@ -22,19 +22,42 @@ import MaruShaher from "../components/home/MaruShaher.jsx";
 import ShikshanNewsSection from "../components/home/ShikshanNewsSection.jsx";
 import ManoranjanNewsSection from "../components/home/ManoranjanNewsSection.jsx";
 import RecipeNewsSection from "../components/home/RecipeNewsSection.jsx";
+// Tablet-only inline widgets (sidebar 768–1279 me hidden hai, isliye uske
+// cards beech-beech me: top news -> video -> e-paper -> games -> poll)
+import VideoCard from "../components/widgets/VideoCard.jsx";
+import EPaper from "../components/widgets/EPaper.jsx";
+import GamesWidgetCard from "../components/widgets/GamesWidgetCard.jsx";
+import PollWidgetCard from "../components/widgets/PollWidgetCard.jsx";
+
+// Sirf tablet (768–1279px): mobile pe BottomNav hai, desktop pe sidebar hai
+function TabletOnly({ children }) {
+  return <div className="hidden py-4 md:block xl:hidden">{children}</div>;
+}
 
 export default function Home() {
   return (
     <MainGrid>
       <div>
         <HomeHeroSection />
+        <TabletOnly>
+          <VideoCard title="વિડિઓ" to="/videos" />
+        </TabletOnly>
         <HomeVideosSection />
+        <TabletOnly>
+          <EPaper title="ઈ-પેપર" to="/epaper" />
+        </TabletOnly>
         <HomeFiller1 />
         <HomeRmtgmt />
         <HomeBeeps />
         <HomeFiller2 />
+        <TabletOnly>
+          <GamesWidgetCard title="ગેમ્સ" to="/games" />
+        </TabletOnly>
         <HomeAajnuRashifal />
         <HomeFiller3 />
+        <TabletOnly>
+          <PollWidgetCard />
+        </TabletOnly>
         <HomePhotoGallery />
         <HomeFiller4 />
         {/* <HomeOnThisDay /> */}
