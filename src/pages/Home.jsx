@@ -22,20 +22,22 @@ import MaruShaher from "../components/home/MaruShaher.jsx";
 import ShikshanNewsSection from "../components/home/ShikshanNewsSection.jsx";
 import ManoranjanNewsSection from "../components/home/ManoranjanNewsSection.jsx";
 import RecipeNewsSection from "../components/home/RecipeNewsSection.jsx";
-// Tablet-only inline widgets (sidebar 768–1279 me hidden hai, isliye uske
-// cards beech-beech me: top news -> video -> e-paper -> games -> poll)
+// Tablet LANDSCAPE inline rows (sidebar 768–1279 me hidden hai).
+// Sirf landscape: portrait me BottomNav already hai isliye wahan nahi.
+// Row me 2 cards bagal-bagal, items-start taaki chhota card stretch na ho.
 import VideoCard from "../components/widgets/VideoCard.jsx";
 import EPaper from "../components/widgets/EPaper.jsx";
 import GamesWidgetCard from "../components/widgets/GamesWidgetCard.jsx";
-import PollWidgetCard from "../components/widgets/PollWidgetCard.jsx";
+import OpinionWidgetCard from "../components/widgets/OpinionWidgetCard.jsx";
 
 // Sirf tablet LANDSCAPE (768–1279px landscape): portrait me BottomNav
-// already hai isliye wahan nahi. Card ko sidebar wali natural width
-// (max 320px) me rakha taaki video/epaper ka proportion na bigde.
-function TabletLandscape({ children }) {
+// already hai isliye wahan nahi.
+function TabletLandscapeRow({ children }) {
   return (
     <div className="hidden py-5 md:landscape:block xl:hidden">
-      <div className="w-full max-w-[320px]">{children}</div>
+      <div className="grid w-full grid-cols-2 items-start gap-4">
+        {children}
+      </div>
     </div>
   );
 }
@@ -45,22 +47,17 @@ export default function Home() {
     <MainGrid>
       <div>
         <HomeHeroSection />
-        <TabletLandscape>
+        <TabletLandscapeRow>
           <VideoCard title="વિડિઓ" to="/videos" />
-        </TabletLandscape>
-        <HomeVideosSection />
-        <TabletLandscape>
           <EPaper title="ઈ-પેપર" to="/epaper" />
-        </TabletLandscape>
+        </TabletLandscapeRow>
+        <HomeVideosSection />
         <HomeFiller1 />
         <HomeRmtgmt />
         <HomeBeeps />
         <HomeFiller2 />
         <HomeAajnuRashifal />
         <HomeFiller3 />
-        <TabletLandscape>
-          <PollWidgetCard />
-        </TabletLandscape>
         <HomePhotoGallery />
         <HomeFiller4 />
         {/* <HomeOnThisDay /> */}
@@ -73,9 +70,10 @@ export default function Home() {
             <WorldNewsSection />
             <EntertainmentNewsSection />
             <MaruGujarat />
-            <TabletLandscape>
+            <TabletLandscapeRow>
+              <OpinionWidgetCard title="ઓપીનિયન" />
               <GamesWidgetCard title="ગેમ્સ" to="/games" />
-            </TabletLandscape>
+            </TabletLandscapeRow>
             <MaruShaher />
             <ManoranjanNewsSection />
             <ShikshanNewsSection />
