@@ -29,9 +29,15 @@ import EPaper from "../components/widgets/EPaper.jsx";
 import GamesWidgetCard from "../components/widgets/GamesWidgetCard.jsx";
 import PollWidgetCard from "../components/widgets/PollWidgetCard.jsx";
 
-// Sirf tablet (768–1279px): mobile pe BottomNav hai, desktop pe sidebar hai
-function TabletOnly({ children }) {
-  return <div className="hidden py-4 md:block xl:hidden">{children}</div>;
+// Sirf tablet LANDSCAPE (768–1279px landscape): portrait me BottomNav
+// already hai isliye wahan nahi. Card ko sidebar wali natural width
+// (max 320px) me rakha taaki video/epaper ka proportion na bigde.
+function TabletLandscape({ children }) {
+  return (
+    <div className="hidden py-5 md:landscape:block xl:hidden">
+      <div className="w-full max-w-[320px]">{children}</div>
+    </div>
+  );
 }
 
 export default function Home() {
@@ -39,25 +45,22 @@ export default function Home() {
     <MainGrid>
       <div>
         <HomeHeroSection />
-        <TabletOnly>
+        <TabletLandscape>
           <VideoCard title="વિડિઓ" to="/videos" />
-        </TabletOnly>
+        </TabletLandscape>
         <HomeVideosSection />
-        <TabletOnly>
+        <TabletLandscape>
           <EPaper title="ઈ-પેપર" to="/epaper" />
-        </TabletOnly>
+        </TabletLandscape>
         <HomeFiller1 />
         <HomeRmtgmt />
         <HomeBeeps />
         <HomeFiller2 />
-        <TabletOnly>
-          <GamesWidgetCard title="ગેમ્સ" to="/games" />
-        </TabletOnly>
         <HomeAajnuRashifal />
         <HomeFiller3 />
-        <TabletOnly>
+        <TabletLandscape>
           <PollWidgetCard />
-        </TabletOnly>
+        </TabletLandscape>
         <HomePhotoGallery />
         <HomeFiller4 />
         {/* <HomeOnThisDay /> */}
@@ -70,6 +73,9 @@ export default function Home() {
             <WorldNewsSection />
             <EntertainmentNewsSection />
             <MaruGujarat />
+            <TabletLandscape>
+              <GamesWidgetCard title="ગેમ્સ" to="/games" />
+            </TabletLandscape>
             <MaruShaher />
             <ManoranjanNewsSection />
             <ShikshanNewsSection />
