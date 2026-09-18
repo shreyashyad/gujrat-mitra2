@@ -1850,6 +1850,22 @@
   }
 
   /* =========================================================
+    Tablet LANDSCAPE rows (Home.jsx) — sirf 768–1279px landscape
+    me dikhte hain. Ek bounded media query hai isliye desktop ya
+    portrait pe leak hone ka sawal hi nahi. Mobile/desktop jaisa
+    tha waisa hi rahta hai.
+    ========================================================= */
+  .tablet-landscape-row {
+    display: none;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
+    .tablet-landscape-row {
+      display: block;
+    }
+  }
+
+  /* =========================================================
     Tablet font bump (+1px) — font-size ONLY, layout untouched.
     Sirf 768–1279px pe lagta hai. Padding/gap/width/images,
     line-height, weight — kuch nahi badalta, isliye koi box,
