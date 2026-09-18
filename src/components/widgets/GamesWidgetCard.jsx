@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GAMES_LIST } from "../../data/gamesList.js";
 
-export default function GamesWidgetCard({ title = "ગેમ્સ", to = "/games" }) {
+export default function GamesWidgetCard({ title = "ગેમ્સ", to = "/games", expandAll = false }) {
   const [isOpen, setIsOpen] = useState(false);
   const games = GAMES_LIST.filter((g) => g.available);
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ export default function GamesWidgetCard({ title = "ગેમ્સ", to = "/game
       <div className="w-full rounded-[7px] overflow-hidden bg-white dark:bg-[#121212]">
         <div
           className={`transition-all duration-300 ease-in-out overflow-hidden ${
-            isOpen ? "max-h-[2000px]" : "max-h-[215px]"
+            isOpen || expandAll ? "max-h-[2000px]" : "max-h-[215px]"
           }`}
         >
           {games.map((g, index) => (
@@ -77,7 +77,7 @@ export default function GamesWidgetCard({ title = "ગેમ્સ", to = "/game
           ))}
         </div>
 
-        {games.length > 2 && (
+        {games.length > 2 && !expandAll && (
           <button
             type="button"
             onClick={handleToggle}

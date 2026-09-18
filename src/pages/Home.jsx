@@ -72,7 +72,7 @@ export default function Home() {
             <MaruGujarat />
             <TabletLandscapeRow>
               <OpinionWidgetCard title="ઓપીનિયન" />
-              <GamesWidgetCard title="ગેમ્સ" to="/games" />
+              <GamesWidgetCard title="ગેમ્સ" to="/games" expandAll />
             </TabletLandscapeRow>
             <MaruShaher />
             <ManoranjanNewsSection />
