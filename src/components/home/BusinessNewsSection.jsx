@@ -184,7 +184,7 @@ export default function BusinessNewsSection() {
         md (768-1023)     : text stack full-width (horizontal cards) + 2 image cards side-by-side
         lg (≥1024)        : original 3-column layout (untouched)
       */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:items-stretch">
         {/* Section 1: Text Cards Stacked 
             md → spans both columns (full width list)
             lg → back to first column only */}

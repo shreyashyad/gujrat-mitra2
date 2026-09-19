@@ -179,7 +179,7 @@ export default function TopNewsSection() {
     <section className="mt-10 
     lg:items-stretch shadow-[0_2px_3px_rgba(0,0,0,0.06),0_0_20px_rgba(0,0,0,0.06)] p-7 bg-white dark:bg-[#121212] border border-gray-200/70 dark:border-white/10 rounded-3xl
     ">
-      <div className="grid grid-cols-1 gap-4 lg:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
+      <div className="grid grid-cols-1 gap-4 lg:gap-6 md:grid-cols-2 xl:grid-cols-3 xl:items-stretch">
         {imageCards.map((article) => (
           <ImageCard key={article.id} article={article} />
         ))}

@@ -190,7 +190,7 @@ export default function ManoranjanNewsSection() {
         md (768-1023)     : 2 columns → first 2 ImageCards side-by-side, then MidCards list full-width
         lg (≥1024)        : original 3-column layout (untouched)
       */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1.2fr_1.1fr] gap-6 lg:items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1.2fr_1.2fr_1.1fr] gap-6 xl:items-stretch">
         {imageCards.map((article) => (
           <ImageCard key={article.id} article={article} />
         ))}

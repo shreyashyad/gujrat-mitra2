@@ -378,8 +378,8 @@ export default function HomeHeroSection() {
       </section>
 
       {/* ========== BOTTOM STRIP ========== */}
-      <section className="hidden gap-4 lg:gap-5 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible
-                    lg:items-stretch
+      <section className="hidden gap-4 lg:gap-5 md:grid md:grid-cols-2 xl:grid-cols-4 md:overflow-visible
+                    xl:items-stretch
                     md:shadow-[0_2px_3px_rgba(0,0,0,0.06),0_0_20px_rgba(0,0,0,0.06)]
                     md:p-5 md:bg-white dark:md:bg-[#121212]
                     md:border md:border-gray-200/0 dark:md:border-white/0

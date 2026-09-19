@@ -107,7 +107,7 @@ export default function BharatNewsSection() {
         • 913px – 1023px   → 2 columns
         • ≥ 1024px (lg)    → 3 columns (desktop untouched)
       */}
-      <div className="grid grid-cols-1 gap-4 lg:gap-6 min-[913px]:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 lg:gap-6 min-[913px]:grid-cols-2 xl:grid-cols-3">
         {items.map((article) => (
           <BharatCard key={article.id} article={article} />
         ))}

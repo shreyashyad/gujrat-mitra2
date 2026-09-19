@@ -371,9 +371,9 @@ export default function MaruShaher() {
         913px – 1023px   → 2 columns (Featured full + left MidCards / right TextCards)
         ≥ 1024px         → original 3-column (untouched)
       */}
-      <div className="grid grid-cols-1 min-[913px]:grid-cols-2 lg:grid-cols-[1.2fr_1.2fr_1.1fr] gap-6 lg:gap-5 lg:items-stretch">
+      <div className="grid grid-cols-1 min-[913px]:grid-cols-2 xl:grid-cols-[1.2fr_1.2fr_1.1fr] gap-6 lg:gap-5 xl:items-stretch">
         {/* Featured */}
-        <div className="min-[913px]:col-span-2 lg:col-span-1">
+        <div className="min-[913px]:col-span-2 xl:col-span-1">
           <FeaturedCard article={featured} />
         </div>
 

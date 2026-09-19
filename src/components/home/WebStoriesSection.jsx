@@ -147,7 +147,7 @@ export default function WebStoriesSection() {
         Mobile / Tablet → horizontal scroll, cards keep nice fixed width
         Desktop (lg+)  → normal 5-column grid (no scroll needed)
       */}
-      <div className="flex gap-4 overflow-x-auto pb-1 scrollbar-hide lg:grid lg:grid-cols-5 lg:gap-5 lg:overflow-visible">
+      <div className="flex gap-4 overflow-x-auto pb-1 scrollbar-hide xl:grid xl:grid-cols-5 xl:gap-5 xl:overflow-visible">
         {stories.map((article, i) => (
           <StoryCard key={article.id || i} article={article} />
         ))}

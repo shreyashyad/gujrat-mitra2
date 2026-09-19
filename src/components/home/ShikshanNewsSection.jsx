@@ -197,7 +197,7 @@ export default function ShikshanNewsSection() {
         913px – 1023px   → 2 columns (balanced: two images on top, two lists below)
         ≥ 1024px         → original 4-column (untouched)
       */}
-      <div className="grid grid-cols-1 min-[913px]:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-stretch">
+      <div className="grid grid-cols-1 min-[913px]:grid-cols-2 xl:grid-cols-4 gap-6 xl:items-stretch">
         {/* Image Left */}
         <div className="min-[913px]:order-1 lg:order-1">
           {imageLeft && <ImageCard article={imageLeft} />}
