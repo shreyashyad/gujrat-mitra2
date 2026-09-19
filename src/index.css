@@ -2065,3 +2065,33 @@
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
+
+/* =========================================================
+  Scale guard — Windows display scaling (125%/150%) shrinks
+  the CSS viewport (1920px -> ~1536/~1280px). Instead of
+  squeezing/hiding anything, shrink the whole desktop layout
+  proportionally so it looks identical on every scale.
+  Text/images get slightly smaller but NOTHING is removed
+  and the layout never reflows. Mobile (<768px) untouched.
+  ========================================================= */
+.scale-guard {
+  zoom: 1;
+}
+
+@media (min-width: 768px) and (max-width: 1536px) {
+  .scale-guard {
+    zoom: 0.96;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  .scale-guard {
+    zoom: 0.92;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .scale-guard {
+    zoom: 0.88;
+  }
+}

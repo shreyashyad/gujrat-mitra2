@@ -26,7 +26,7 @@ function SideCardWithImage({ article }) {
       tabIndex={0}
       onClick={() => openNews(article)}
       onKeyDown={(e) => e.key === "Enter" && openNews(article)}
-      className="group relative flex h-full flex-row md:flex-col justify-between md:justify-start! lg:min-h-[255px] cursor-pointer gap-3 md:gap-0
+      className="group relative flex h-full flex-row md:flex-col justify-between md:justify-start! lg:min-h-[220px] cursor-pointer gap-3 md:gap-0
                  border-b md:border-b-0 border-black/0 dark:border-white/0 pb-3 md:pb-0
                  hover:-translate-y-0.5 transition-all duration-300 ease-out active:scale-[0.985]"
     >
@@ -140,7 +140,7 @@ function SideCardResponsive({ article }) {
       </div>
 
       {/* Mobile: justify-start so metaRow sits tight under headline */}
-      <div className="relative flex flex-1 flex-col justify-start md:justify-start! lg:min-h-[110px] min-w-0 gap-1">
+      <div className="relative flex flex-1 flex-col justify-start md:justify-start! lg:min-h-[100px] min-w-0 gap-1">
         <div className="relative pr-6">
           <p className="article-headline">
             {article.headline}
@@ -213,7 +213,7 @@ function BottomCard({ article }) {
       tabIndex={0}
       onClick={() => openNews(article)}
       onKeyDown={(e) => e.key === "Enter" && openNews(article)}
-      className="group flex h-full flex-col justify-between md:justify-start! lg:min-h-[265px] cursor-pointer pt-3
+      className="group flex h-full flex-col justify-between md:justify-start! lg:min-h-[240px] cursor-pointer pt-2
                  hover:-translate-y-0.5 transition-all duration-300 ease-out active:scale-[0.985]"
     >
       <div className="min-w-0">
@@ -339,11 +339,11 @@ export default function HomeHeroSection() {
   const textRow2 = textCards.slice(2, 4);
 
   return (
-    <div className="space-y-6 lg:space-y-9">
+    <div className="space-y-4 lg:space-y-6">
       {/* ========== TOP BLOCK ========== */}
-      <section className="grid grid-cols-1 gap-4 lg:gap-6 lg:grid-cols-[1fr_1.15fr] lg:items-stretch
+      <section className="grid grid-cols-1 gap-4 lg:gap-5 lg:grid-cols-[1fr_1.15fr] lg:items-stretch
                     md:shadow-[0_2px_3px_rgba(0,0,0,0.06),0_0_20px_rgba(0,0,0,0.06)]
-                    md:p-7 md:bg-white dark:md:bg-[#121212]
+                    md:p-5 md:bg-white dark:md:bg-[#121212]
                     md:border md:border-gray-200/0 dark:md:border-white/0
                     md:rounded-3xl">
         {mainHero && (
@@ -354,21 +354,21 @@ export default function HomeHeroSection() {
           />
         )}
 
-        <div className="flex h-full flex-col gap-0 md:gap-2">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6">
+        <div className="flex h-full flex-col gap-2 md:gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
             {row1.map((article) => (
               <SideCardWithImage key={article.id} article={article} />
             ))}
           </div>
 
-          <div className="flex flex-1 flex-col gap-0 md:gap-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6">
+          <div className="flex flex-1 flex-col gap-2 md:gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
               {textRow1.map((article) => (
                 <SideCardResponsive key={article.id} article={article} />
               ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
               {textRow2.map((article) => (
                 <SideCardResponsive key={article.id} article={article} />
               ))}
@@ -378,10 +378,10 @@ export default function HomeHeroSection() {
       </section>
 
       {/* ========== BOTTOM STRIP ========== */}
-      <section className="hidden gap-4 lg:gap-6 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible
+      <section className="hidden gap-4 lg:gap-5 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible
                     lg:items-stretch
                     md:shadow-[0_2px_3px_rgba(0,0,0,0.06),0_0_20px_rgba(0,0,0,0.06)]
-                    md:p-7 md:bg-white dark:md:bg-[#121212]
+                    md:p-5 md:bg-white dark:md:bg-[#121212]
                     md:border md:border-gray-200/0 dark:md:border-white/0
                     md:rounded-3xl">
         {bottomStories.map((article) => (
@@ -392,7 +392,7 @@ export default function HomeHeroSection() {
             <BottomCard article={article} />
           </div>
         ))}
-        <div className="w-full pt-3">
+        <div className="w-full pt-2">
           <AdSlot />
         </div>
       </section>

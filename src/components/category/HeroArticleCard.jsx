@@ -6,7 +6,7 @@ import { useSavedNews } from "../../context/SavedNewsContext.jsx";
 /** Sub-component: Receives article, state, and handler as props */
 function MetaRow({ article, isBookmarked, onBookmark }) {
     return (
-        <div className="mt-0 md:mt-2 relative md:px-2 md:pb-3.5 flex items-center justify-between text-ink/50 dark:text-ink-dark/50 text-[14px] md:text-[15px]">
+        <div className="mt-0 md:mt-2 relative md:px-2 md:pb-2 flex items-center justify-between text-ink/50 dark:text-ink-dark/50 text-[14px] md:text-[15px]">
             {/* Left metadata info */}
             <div className="flex flex-wrap items-center gap-x-1 gap-y-0.5 truncate">
                 {article.cat && (
@@ -61,7 +61,7 @@ export default function HeroArticleCard({ article, categoryLabel }) {
             tabIndex={0}
             onClick={handleOpen}
             onKeyDown={(e) => e.key === "Enter" && handleOpen(e)}
-            className="group flex flex-col md:justify-start lg:min-h-[530px] cursor-pointer rounded-lg overflow-hidden hover:-translate-y-0.5 transition-all duration-300 ease-out active:scale-[0.985]"
+            className="group flex flex-col md:justify-start lg:min-h-[500px] cursor-pointer rounded-lg overflow-hidden hover:-translate-y-0.5 transition-all duration-300 ease-out active:scale-[0.985]"
         >
             {/* Image Container */}
             <div className="relative w-full aspect-[16/11] overflow-hidden rounded-t-lg">
@@ -77,7 +77,7 @@ export default function HeroArticleCard({ article, categoryLabel }) {
                 )}
             </div>
 
-            <div className="mt-1 md:mt-4.5 px-0 md:px-1">
+            <div className="mt-1 md:mt-3 px-0 md:px-1">
                 <p className="font-gu font-semibold leading-[1.35] text-[22px] sm:text-[33px] md:text-[33px] text-ink dark:text-ink-dark transition-colors duration-200 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">
                     {article.headline}
                 </p>

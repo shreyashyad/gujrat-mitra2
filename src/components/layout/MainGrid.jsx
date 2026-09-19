@@ -32,7 +32,7 @@ export default function MainGrid({ children }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 items-start gap-4 xl:grid-cols-[minmax(0,1fr)_295px] xl:gap-6">
+      <div className="grid grid-cols-1 items-start gap-4 xl:grid-cols-[minmax(0,1fr)_clamp(230px,19vw,270px)] xl:gap-5">
         <main className="min-w-0 w-full py-5 sm:py-6">
           {showNews ? (
             <NewsDetailPanel />

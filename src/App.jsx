@@ -269,7 +269,7 @@ function AppContent() {
     : `mx-auto w-full flex-1 ${AD_RAIL_PADDING} ${AD_RAIL_MAX_WIDTH}`;
 
   return (
-    <div className="bg-[#f5f5f7] dark:bg-surface-dark min-h-screen flex flex-col justify-between transition-all duration-300">
+    <div className="scale-guard bg-[#f5f5f7] dark:bg-surface-dark min-h-screen flex flex-col justify-between transition-all duration-300">
       {showFullHeader && <Header showChrome={showChrome} />}
 
       <div className={layoutWrapperClass}>
